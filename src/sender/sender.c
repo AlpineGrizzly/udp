@@ -5,7 +5,6 @@
 #include <arpa/inet.h>
 #include <netinet/in.h>
 
-
 #define NUM_ARGS 7
 #define DEBUG 1
 #define BUFSIZE 2048
@@ -165,10 +164,9 @@ int main(int argc, char* argv[]) {
         printf("%02x ", (unsigned char)packet.data[i]);
         fwrite(&packet.data[i], sizeof(unsigned char),1,fout);
     }
+    fclose(fout);
 
     printf("Written to %s\n", output);
-    fclose(fout);
     free(packet.data);
-
     return 0;
 }

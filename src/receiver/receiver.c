@@ -134,7 +134,7 @@ int main(int argc, char* argv[]) {
 
     if (calc_check != 0xffff) {
         printf("Checksum error!\n"); // Checksum error
-        //exit(0);
+        exit(0);
     }
     // Datagram from source-address source-port to dest-address to dest-port Length xxx bytes
     printf("Datagram from %s:%d to %s:%d Length %d bytes\n", argv[Src_ip], src_port, argv[Dst_ip], dst_port, gram_len);
